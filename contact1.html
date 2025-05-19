@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saihari Papers - Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+      body {
+          margin: 0;
+          font-family: 'Lora', serif;
+          align-items: center;
+          justify-content: baseline;
+          font-size: medium;
+        }
+
+        h1, h2, h3, h4, h5, h6 
+        {
+          font-family: 'Gambetta', serif;
+        }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        background-color: white;
+        flex-wrap: wrap;
+      }
+     .section-header {
+      position: relative;
+      background-image: url('images/header-bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 10px;
+      margin: 0;
+      border-radius:0px;
+      overflow: hidden;
+      width: 100%;
+      }
+
+    .section {
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      text-align: center;
+      color:ffffff ;
+    }
+    .section-header h2 {
+      font-size: 2.0em;
+      color: white;
+      text-align: center;
+      position: relative;
+      margin: 5px 0;
+    }
+      
+        .section-header p {
+      color: white ; 
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin: 5px 0;
+      padding: 8px 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 40px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .section-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 0;
+    }
+
+     .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 16px;
+      color: #333;
+      text-align:right;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      text-decoration: none;
+      color: #0275d8;
+    }
+
+    .contact-item .icon {
+      font-size: 14px;
+    }
+
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it appears on top of all content */
+      transition: opacity 0.2s ease;
+    }
+
+      .splash-screen img {
+        width: 350px; /* Adjust logo size */
+        height: auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    } 
+
+    nav {
+      background: linear-gradient(to right, #004aad, #b61f1f);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 700;
+      font-size:medium;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      }
+     /* Wrap the form and locations */
+     .contact-container {
+     display: flex;
+     flex-direction: column;
+     gap: 40px;
+     align-items: center;
+     padding: 0 20px;
+   }
+    /* Quote form styling */
+    .form-column {
+      width: 100%;
+      max-width: 800px; /* Increased width */
+      background: linear-gradient(to right, #00c3ff, #005f99);
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      }
+
+    .form-column:hover {
+      transform: scale(1.01);
+      }
+
+    form label {
+      font-weight: 500;
+      color: #444;
+      }
+
+    form input, form select, form textarea {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+      width: 100%;
+      padding: 12px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      }
+
+      button {
+        border-radius: 10px;
+        /* background: linear-gradient(to right, #00c3ff, #035b8b); */
+        font-weight: 600;
+        }
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      button {
+        margin-top: 8px;
+        padding: 10px 20px;
+        background-color: #035b8b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .locations {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+    .locations-column {
+      display: flex;
+      flex-direction: row; /* horizontal layout */
+      gap: 30px;            /* spacing between boxes */
+      flex-wrap: wrap;      /* allows wrapping on small screens */
+      justify-content: center; /* center the row */
+    }
+    .location-box {
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: medium;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease;
+    }
+    .location-box:hover {
+      transform: translateY(-5px);
+    }
+    .location-image {
+      width: 80%;           /* Full width of its container */
+      max-height: 280px;     /* Limit height to 160px */
+      object-fit: cover;     /* Maintain aspect ratio and crop if necessary */
+      border-radius: 5px;   /* Rounded corners */
+      margin-bottom: 10px;
+    }
+
+    .location-box a {
+      color: #007BFF;
+      text-decoration: none; /* Removed underline */
+    }
+    .location-box h3 {color: #000000;text-align: left;}
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    .whatsapp-float img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float img:hover {
+      transform: scale(1.1);
+    }
+
+      /* ******FOOTER********* */
+      .footer-container {
+      display: flex;
+      justify-content: space-around;  /* evenly distributes space */
+      flex-wrap: wrap;
+      padding: 20px 20px;  
+      box-sizing: border-box;
+    }
+
+
+    .footer-column {
+      flex: 1 1 280px;
+      max-width: 100%;
+      padding-left: 150px;
+    }
+
+    .footer-title {
+      border-bottom: 2px solid #00b4d8;
+      display: inline-block;
+      padding-bottom: 5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #fafbfb;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  .footer-bottom {
+      text-align: center;
+      padding: 10px 0 20px;
+      font-size: 16px;
+      color: #dcdcdc;
+    }
+
+
+    /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .about-content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .about-content-wrapper > div {
+      width: 100%;
+      max-width: 100%;
+    }
+
+     .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .logo img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #333;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-item .icon {
+  width: 20px;            /* uniform width for all icons */
+  min-width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.contact-item a,
+.contact-item span {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 16px;
+    margin: 5px;
+  }
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 10px;
+      text-align: center;
+    }
+
+    .footer-column {
+      flex: 1 1 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .footer-links li {
+      margin: 6px 0;
+      text-align: left;
+    }
+
+    .footer-column iframe {
+      width: 100% !important;
+      height: 180px !important;
+    }
+
+    .footer-title {
+      text-align: center;
+    }
+  }
+  </style>
+  </head>
+
+<body>
+     <!-- Splash Screen -->
+     <div class="splash-screen" id="splashScreen">
+      <img src="images/logo.jpg" alt="Saihari Papers Logo" />
+    </div>
+
+     <header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.jpg" alt="Saihari Papers Logo" />
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="icon">📞</span> 9865543794
+      </div>
+      <div class="contact-item">
+        <span class="icon">📧</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saiharipapers@gmail.com" target="_blank">
+              saiharipapers@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+       <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank" rel="noopener noreferrer"> Locate Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <nav>
+    <a href="index.html">Home |</a> 
+      <a href="whoweare1.html">Who We Are |</a> 
+      <a href="services1.html">Services |</a> 
+      <a href="gallery1.html">Gallery |</a> 
+      <a href="contact1.html">Contact</a>
+  </nav>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Crafted for Clarity</h2>
+      <p>Our paper is made to make your prints pop. No smudges, no jams just smooth results every time. Perfect for business, school, or creative play.</p>
+    </div><br>
+    <div class="contact-container" style="flex: 1; min-width: 300px;">
+      <!-- Left: Locations -->
+      <div class="locations-column">
+        <div class="location-box">
+          <h3>🏢 Head Office</h3>
+          <img src="images/head-office.jpg" alt="Head Office" class="location-image">
+          <p>No.6, Chinna Subbannan Layout,<br>NSR Road, Sai Baba Colony,<br>Coimbatore, Tamil Nadu - 641011</p>
+          <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank">📍 View on Google Maps</a>
+        </div>
+        <div class="location-box">
+          <h3>🏭 Manufacturing Unit</h3>
+          <img src="images/bg.jpeg" alt="Head Office" class="location-image">
+          <p>6/103/1,Tiruchengode to Kokkarayanpettai Main Road,E.Kailasampalayam Bus stop,<br>Emapally Village,Tiruchengode Taluk,<br>Namakkal, Tamil Nadu - 637214</p>
+          <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank">📍 View on Google Maps</a>
+        </div>
+        <div class="location-box">
+          <h3>🏭 Conversion Unit</h3>
+          <img src="images/SSP_5358.JPG" alt="Head Office" class="location-image">
+          <p>Manthoppu Pirivu, Seeliyur (via),Thekkampatty,<br>Mettupalayam Taluk,<br>Coimbatore – 641113</p>
+          <a href="https://maps.app.goo.gl/Tj7QJzryb5JQ26A4A" target="_blank">📍 View on Google Maps</a>
+        </div>
+      </div>
+    
+      <!-- Right: Quote Form -->
+      <div class="form-column"style="flex: 1; min-width: 300px;">
+        <h2 style="color: #ffffff; text-align:center; margin-bottom: 20px;font-family: 'Times New Roman', Times, serif;">Request a Quote</h2>
+        <form>
+          <label for="name" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" />
+    
+          <label for="email" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" />
+    
+          <label for="phone" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+91 9876543210" style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" />
+    
+          <label for="product" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Product Type</label>
+          <select id="product" name="product" required style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+            <option value="">--Select Product--</option>
+            <option value="notebooks">Notebooks</option>
+            <option value="copiers">Copier Paper</option>
+            <option value="bakery">Bakery Sheets</option>
+            <option value="tablerolls">Table Rolls</option>
+            <option value="plates">Paper Plates</option>
+            <option value="plates">Drawing Books</option>
+            
+          </select>
+    
+          <label for="quantity" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Quantity Needed</label>
+          <input type="number" id="quantity" name="quantity" required style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" />
+    
+          <label for="location" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Delivery Location</label>
+          <input type="text" id="location" name="location" required style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;" />
+    
+          <label for="preferredContact" style="font-size: 14px; color: #ffffff; margin-bottom: 8px; display: block;">Preferred Contact Method</label>
+          <select id="preferredContact" name="preferredContact" required style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+          </select>
+    
+          <center> 
+            <button type="button" ... onclick="sendWhatsAppMessage()">📤 Submit</button>
+          </center>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<div >
+ <section style="max-width: 780px; margin: 40px auto; padding: 20px; border: 1px solid #ccc;background-image:url('images/bg1.png'); border-radius: 12px; color: #333;">
+  <h2 style="text-align: center; font-size: 22px; margin-bottom: 20px;">Banking Details</h2>
+  <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
+    <tr>
+      <td style="padding: 10px; font-weight: bold;">Bank Name:</td>
+      <td style="padding: 10px;">HDFC Bank</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: bold;">A/C Number:</td>
+      <td style="padding: 10px;">9996 30000 30000</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: bold;">IFSC Code:</td>
+      <td style="padding: 10px;">HDFC0002569</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: bold;">Branch:</td>
+      <td style="padding: 10px;">NSR Road, Sai Baba Colony, Coimbatore</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: bold;">Payee Name:</td>
+      <td style="padding: 10px;">Saihari Papers</td>
+    </tr>
+  </table>
+</section>
+</div>
+<!-- *****FOOTER **** -->
+<footer style="background: linear-gradient(to right, #004aad, #b61f1f); color: #f4f6f8; padding: 20px;  border-top: 1px solid #ddd;">
+  <div class="footer-container">
+
+    <!-- Quick Links Section -->
+    <div class="footer-column" style="flex: 1; min-width: 300px;">
+      <h3 class="footer-title" >QUICK LINKS</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whoweare1.html">Who We Are</a></li>
+        <li><a href="services1.html">Our Services</a></li>
+        <li><a href="gallery1.html">Gallery</a></li>
+        <li><a href="contact1.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="footer-column" style="flex: 1; min-width: 300px;">
+      <h3 class="footer-title">CONTACT INFO</h3>
+      <p><strong style="font-size: large;">Sai Hari Papers</strong><br />
+        No.6, Chinna Subbannan Layout, NSR Road,<br />
+        Sai Baba Colony, Coimbatore – 641011</p>
+      <p><strong>Office Timings:</strong> 9.00 AM – 7.00 PM</p>
+      <p>📞 04288-291062 | 📞 9750945039</p>
+      <p>✉️ <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saiharipapers@gmail.com" target="_blank" style="text-decoration: none; color: #ffffff;">saiharipapers@gmail.com</a>
+      </p>
+      <!-- <p><a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank">Google Maps</a></p> -->
+    </div>
+
+   <!-- Embedded Google Map Section with Clickable Link -->
+<div class="footer-column" style="flex: 1; min-width: 300px;">
+  <h3 class="footer-title">OUR LOCATION</h3><br>
+  <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank"
+     style="display: inline-block; width: 300px; height: 180px; border: 2px solid white; border-radius: 12px; overflow: hidden;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.291166507346!2d76.94842807480774!3d11.02379495559008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85852a663021f%3A0xd5b3cfd62a19cba2!2sSai%20Hari%20Papers!5e0!3m2!1sen!2sin!4v1715670000000!5m2!1sen!2sin"
+      width="300" height="300" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </a>
+</div>
+</div>
+<div class="footer-bottom">
+  © 2025 Sai Hari Papers. Designed by <strong>Your Designer Name</strong>
+</div>
+</footer>
+
+  <!-- JavaScript for Splash Screen -->
+  <script>
+  window.addEventListener('load', function () {
+    const splash = document.getElementById('splashScreen');
+    splash.style.opacity = '0';
+    splash.style.pointerEvents = 'none';
+    setTimeout(() => {
+      splash.style.display = 'none';
+    }, 300); // Delay for fade-out
+  });
+</script>
+
+ <script>
+  function sendWhatsAppMessage() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const product = document.getElementById('product').value;
+    const quantity = document.getElementById('quantity').value.trim();
+    const location = document.getElementById('location').value.trim();
+    const preferredContact = document.getElementById('preferredContact').value;
+
+    if (!name || !email || !phone || !product || !quantity || !location || !preferredContact) {
+      alert("Please fill in all the fields.");
+      return;
+    }
+
+    const message = `Hi Saihari Papers,%0A%0A` +
+      `I would like to request a quote with the following details:%0A%0A` +
+      `👤 Name: ${name}%0A` +
+      `📧 Email: ${email}%0A` +
+      `📞 Phone: ${phone}%0A` +
+      `📦 Product: ${product}%0A` +
+      `🔢 Quantity: ${quantity}%0A` +
+      `📍 Location: ${location}%0A` +
+      `📬 Preferred Contact: ${preferredContact}%0A%0A` +
+      `Regards,%0A${name}`;
+
+    const whatsappNumber = "919597992482";
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+
+    // Reset the form after opening WhatsApp
+    document.querySelector("form").reset();
+  }
+</script>
+
+   <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919597992482?text=Hi%20Saihari%20Papers%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." 
+class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat Icon" />
+</a>
+  
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saihari Papers - Who We Are</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background: #f4f4f4;
+      align-items: center;
+      justify-content: baseline;
+      font-size: medium;
+    }
+    h1, h2, h3, h4, h5, h6 
+    {
+      font-family: 'Gambetta', serif;
+    }
+    
+
+        .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: white;
+      flex-wrap: wrap;
+    }
+      
+    .logo img {
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 16px;
+      color: #333;
+      text-align:right;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      text-decoration: none;
+      color: #0275d8;
+    }
+
+    .contact-item .icon {
+      font-size: 16px;
+    }
+
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it appears on top of all content */
+      transition: opacity 0.2s ease;
+    }
+
+    .splash-screen img {
+      width: 350px; /* Adjust logo size */
+      height: auto;
+    }
+    
+    nav {
+      background: linear-gradient(to right, #004aad, #b61f1f);
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 700;
+      font-size:medium;
+    }
+
+     .section-header {
+      position: relative;
+      background-image: url('images/header-bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 10px;
+      margin: 0;
+      border-radius:0px;
+      overflow: hidden;
+      width: 100%;
+      }
+
+    .section {
+      padding: 0;
+      margin: 0;
+      background-color: #fff;
+      text-align: center;
+      color:ffffff ;
+    }
+    .section-header h2 {
+      font-size: 2.0em;
+      color: white;
+      text-align: center;
+      position: relative;
+      margin: 5px 0;
+    }
+      
+        .section-header p {
+      color: white ; 
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin: 5px 0;
+      padding: 8px 10px;
+    }
+
+  .section-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* overlay */
+    z-index: 0;
+  }
+  .info-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
+    margin: 40px auto;
+    max-width: 1100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+  }
+
+  .info-card:nth-child(even) {
+    background-color: #eef9fb;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .image-container {
+    flex: 1 1 300px;
+    max-width: 400px;
+    animation: slideInLeft 0.8s ease;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .image-container img:hover {
+    transform: scale(1.05);
+  }
+
+  .text-container {
+    flex: 2 1 500px;
+    color: #333;
+    animation: slideInRight 0.8s ease;
+  }
+
+  .text-container h3 {
+    color:#333;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+
+  .text-container p,
+  .text-container ul {
+    font-size: 1.1em;
+    line-height: 1.8em;
+    color: #333;
+  }
+
+  .text-container ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float img:hover {
+    transform: scale(1.1);
+  }
+      
+    /* ******FOOTER********* */
+    .footer-container {
+    display: flex;
+    justify-content: space-around;  /* evenly distributes space */
+    flex-wrap: wrap;
+    padding: 20px 20px;  
+    box-sizing: border-box;
+  }
+
+  .footer-column {
+    flex: 1 1 280px;
+    max-width: 100%;
+    padding-left: 150px;
+  }
+
+  .footer-title {
+    border-bottom: 2px solid #00b4d8;
+    display: inline-block;
+    padding-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a {
+    color: #fafbfb;
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+   .footer-bottom {
+    text-align: center;
+    padding: 10px 0 20px;
+    font-size: 16px;
+    color: #dcdcdc;
+  }
+
+
+    /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .about-content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .about-content-wrapper > div {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .info-card {
+  padding: 20px 15px;
+  margin: 20px 30px;
+}
+
+
+     .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .logo img {
+    max-width: 120px;
+    height: auto;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-item .icon {
+    width: 20px;            /* uniform width for all icons */
+    min-width: 20px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .contact-item a,
+  .contact-item span {
+    color: #0275d8;
+    text-decoration: none;
+  }
+
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    nav a {
+      padding: 8px 10px;
+      font-size: 14px;
+      margin: 5px;
+    }
+      
+    .text-container h3 {
+    color:#333;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  .text-container p,
+  .text-container ul {
+    font-size: 0.98em;
+    line-height: 1.6em;
+    color: #333;
+  }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 10px;
+        text-align: center;
+      }
+
+    .footer-column {
+      flex: 1 1 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+      padding: 10px;
+      text-align: left;
+    }
+
+  .footer-links li {
+    margin: 6px 0;
+    text-align: left;
+  }
+
+  .footer-column iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  .footer-title {
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+     <!-- Splash Screen -->
+     <div class="splash-screen" id="splashScreen">
+      <img src="images/logo.jpg" alt="Saihari Papers Logo" />
+    </div>
+
+   <header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.jpg" alt="Saihari Papers Logo" />
+      </a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="icon">📞</span> 9865543794
+      </div>
+      <div class="contact-item">
+        <span class="icon">📧</span> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saiharipapers@gmail.com" target="_blank">
+              saiharipapers@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+       <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank" rel="noopener noreferrer"> Locate Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+  <nav>
+    <a href="index.html">Home |</a> 
+      <a href="whoweare1.html">Who We Are |</a> 
+      <a href="services1.html">Services |</a> 
+      <a href="gallery1.html">Gallery |</a> 
+      <a href="contact1.html">Contact</a>
+  </nav>
+
+<!-- WHO WE ARE SECTION -->
+<section class="who-we-are-section">
+  <div class="section-header">
+    <h2>Paper You Can Rely On</h2>
+    <p >Tough on quality, soft on the environment. Consistent performance for all your needs. Your go-to paper, day after day.</p>
+    
+  </div>  
+
+  <!-- Section 1: Text Left, Image Right -->
+  <div class="info-card">
+    <div class="content-wrapper">
+      <div class="text-container">
+        <p><strong>Saihari Papers</strong> is a legacy rooted in passion, integrity, and purpose. Based in the industrious city of Coimbatore, we have been at the forefront of high-quality, sustainable paper manufacturing. What began as a modest endeavor has evolved into a trusted brand serving diverse industries such as education, packaging, retail, and more.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/logo.jpg" alt="Saihari Logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Image Left, Text Right -->
+  <div class="info-card">
+    <div class="content-wrapper" style="flex-direction: row-reverse;">
+      <div class="text-container mission-vision">
+        <h3>Our Mission</h3>
+        <p >Since 1964, we’ve been committed to crafting high-quality, reliable paper products including 📓 student notebooks, 📝 exam sheets, table paper, rolls, and bakery sheets that empower learning and support businesses. 🌟
+          We strive to deliver exceptional value through sustainable practices, ensuring our products meet the needs of today while preserving the environment for tomorrow.</p>
+
+        <h3>Our Vision</h3>
+        <p >To be a global leader in the paper industry, innovating 🌱 sustainable solutions and delivering ✅ trusted, ♻️ eco-friendly products that 📚 inspire education and ✨ enhance everyday life, building on our 🏆 legacy of excellence since 1964.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/vission_and_mission.avif" alt="Saihari Manufacturing">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Text Left, Image Right -->
+  <div class="info-card">
+    <div class="content-wrapper">
+      <div class="text-container">
+        <h3 >Our Core Values</h3>
+        <ul style="list-style: none;">
+          <li>🛡️ <strong>Integrity:</strong> Transparent practices and honest business values.</li>
+          <li>💡 <strong>Innovation:</strong> Constantly improving through ideas and tech.</li>
+          <li>🌱 <strong>Responsibility:</strong> Environmental and social stewardship.</li>
+          <li>🎯 <strong>Customer Delight:</strong> Going beyond expectations every time.</li>
+        </ul>        
+      </div>
+      <div class="image-container">
+        <img src="images/event.JPG" alt="Saihari Values">
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Image Left, Text Right -->
+  <div class="info-card">
+    <div class="content-wrapper" style="flex-direction: row-reverse;">
+      <div class="text-container">
+        <h3 >Committed to Sustainability</h3>
+        <p style="color: #000000;">We believe in paper with a purpose. Our materials and processes are chosen with care, aligning with environmental regulations and green initiatives to ensure a better tomorrow.</p>
+      </div>
+      <div class="image-container">
+        <img src="images/SSP_5387.jpg" alt="Sustainability Efforts">
+      </div>
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="content-wrapper">
+      
+      <div class="text-container" style="text-align: justify;">
+        <h3>Our Quality Commitment</h3>
+        <p>
+          At Sai Hari Papers, we are committed to delivering high-quality paper products that consistently meet and exceed customer expectations. Our goal is to provide reliable, sustainable, and innovative paper solutions through:
+        </p>
+        <ul style="list-style: none;">
+          <li >🔧<strong>Continuous Improvement:</strong> In product quality and production processes.</li>
+          <li>📋<strong>Standard Compliance:</strong> Adhering to all relevant industry and customer standards.</li>
+          <li>🌿<strong>Sustainable Sourcing:</strong> Using responsibly sourced materials and eco-friendly practices.</li>
+          <li>💻<strong>Technology & Training:</strong> Investing in modern tech, training, and teamwork.</li>
+          <li>🤝<strong>Customer Support:</strong> Delivering prompt and effective service and assistance.</li>
+        </ul>
+        <p>
+          We believe that quality is not just a goal, but a culture that drives every aspect of our operations. Every sheet we produce reflects our dedication to excellence.
+        </p>
+      </div>
+  
+      <div class="image-container">
+        <img src="images/qp.png" alt="Saihari Papers Commitment">
+      </div>
+  
+    </div>
+  </div>
+  
+</section>
+  
+<!-- *****FOOTER **** -->
+<footer style="background: linear-gradient(to right, #004aad, #b61f1f); color: #f4f6f8; padding: 20px;  border-top: 1px solid #ddd;">
+  <div class="footer-container">
+
+    <!-- Quick Links Section -->
+    <div class="footer-column" style="flex: 1; min-width: 300px;">
+      <h3 class="footer-title" >QUICK LINKS</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="whoweare1.html">Who We Are</a></li>
+        <li><a href="services1.html">Our Services</a></li>
+        <li><a href="gallery1.html">Gallery</a></li>
+        <li><a href="contact1.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="footer-column" style="flex: 1; min-width: 300px;">
+      <h3 class="footer-title">CONTACT INFO</h3>
+      <p><strong style="font-size: large;">Sai Hari Papers</strong><br />
+        No.6, Chinna Subbannan Layout, NSR Road,<br />
+        Sai Baba Colony, Coimbatore – 641011</p>
+      <p><strong>Office Timings:</strong> 9.00 AM – 7.00 PM</p>
+      <p>📞 04288-291062 | 📞 9750945039</p>
+      <p>✉️ <a href="https://mail.google.com/mail/?view=cm&fs=1&to=saiharipapers@gmail.com" target="_blank" style="text-decoration: none; color: #ffffff;">saiharipapers@gmail.com</a>
+      </p>
+      <!-- <p><a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank">Google Maps</a></p> -->
+    </div>
+
+   <!-- Embedded Google Map Section with Clickable Link -->
+<div class="footer-column" style="flex: 1; min-width: 300px;">
+  <h3 class="footer-title">OUR LOCATION</h3><br>
+  <a href="https://goo.gl/maps/Ewt5EWQABJuNsHEJ8" target="_blank"
+     style="display: inline-block; width: 300px; height: 180px; border: 2px solid white; border-radius: 12px; overflow: hidden;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.291166507346!2d76.94842807480774!3d11.02379495559008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85852a663021f%3A0xd5b3cfd62a19cba2!2sSai%20Hari%20Papers!5e0!3m2!1sen!2sin!4v1715670000000!5m2!1sen!2sin"
+      width="300" height="300" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </a>
+</div>
+</div>
+<div class="footer-bottom">
+  © 2025 Sai Hari Papers. Designed by <strong>Your Designer Name</strong>
+</div>
+</footer>
+
+  <!-- JavaScript for Splash Screen -->
+  <script>
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splashScreen');
+      splash.style.opacity = '0';
+      setTimeout(() => {
+        splash.style.display = 'none';
+      }, 500); // Matches the transition duration
+    });
+  </script>
+   <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919597992482?text=Hi%20Saihari%20Papers%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." 
+class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat Icon" />
+</a>
+</body>
+</html>
